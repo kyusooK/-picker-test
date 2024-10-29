@@ -1,14 +1,14 @@
 <template>
     <v-card outlined @click="openDialog">
         <v-card-title>
-            Inventory : {{ referenceValue ? referenceValue.name : '' }}
+            Inventory : {{ referenceValue ? referenceValue.productName : '' }} {{ referenceValue ? referenceValue.stock : '' }}
         </v-card-title>
 
         <v-dialog v-model="pickerDialog">
             <v-card>
                 <v-card-title>Inventory</v-card-title>
                 <v-card-text>
-                    <InventoryPicker v-model="value" @selected="pick"/>
+                    <InventoryInventoryPicker v-model="newValue" @selected="pick"/>
                 </v-card-text>
                 <v-card-actions>
                     <v-spacer></v-spacer>
